@@ -1,4 +1,6 @@
-hash: da060346f6f020d31f499c4c418cc0b6abdfb354ead6eb68ecbecb9c2fa5dfef
-updated: 2017-10-10T14:55:00.8227503+08:00
-imports: []
+hash: 16ce3ef653db18dfb3c81cdd3045392d1283119ed2bfcfee8ba27d4fcfff297a
+updated: 2017-10-10T23:07:59.309933399+08:00
+imports:
+- name: github.com/tecbot/gorocksdb
+  version: 17991d3138a879b166adebf86f7c84da3c1517a7
 testImports: []
