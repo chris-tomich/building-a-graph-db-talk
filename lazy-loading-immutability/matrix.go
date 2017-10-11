@@ -1,4 +1,4 @@
-package main
+package lazyloadingimmutability
 
 const MatrixWidth int = 810
 const MatrixHeight int = 810
