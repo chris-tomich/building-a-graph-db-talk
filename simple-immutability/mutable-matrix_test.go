@@ -1,19 +1,16 @@
 package simpleimmutability
 
-import (
-	"testing"
-	"fmt"
-)
+import "testing"
 
 func TestMutableMatrixMultiplication(t *testing.T) {
-	m1 := New(
+	m1 := NewMutableMatrix(
 		[][]int{
 			{2, 3, 4},
 			{1, 0, 0},
 		},
 	)
 
-	m2 := New(
+	m2 := NewMutableMatrix(
 		[][]int{
 			{0, 1000},
 			{1, 100},
@@ -22,7 +19,7 @@ func TestMutableMatrixMultiplication(t *testing.T) {
 	)
 
 	m1.MatrixMultiply(m2)
-	m1EqualsM2 := m1.Equals(New(
+	m1EqualsM2 := m1.Equals(NewMutableMatrix(
 		[][]int{
 			{3, 2340},
 			{0, 1000},
@@ -30,17 +27,16 @@ func TestMutableMatrixMultiplication(t *testing.T) {
 	))
 
 	if !m1EqualsM2 {
-		fmt.Println("here 1")
 		t.Fail()
 	}
 
-	m3 := New(
+	m3 := NewMutableMatrix(
 		[][]int{
 			{2, 3, 4},
 		},
 	)
 
-	m4 := New(
+	m4 := NewMutableMatrix(
 		[][]int{
 			{0, 1000},
 			{1, 100},
@@ -49,25 +45,24 @@ func TestMutableMatrixMultiplication(t *testing.T) {
 	)
 
 	m3.MatrixMultiply(m4)
-	m3EqualsM4 := m3.Equals(New(
+	m3EqualsM4 := m3.Equals(NewMutableMatrix(
 		[][]int{
 			{3, 2340},
 		},
 	))
 
 	if !m3EqualsM4 {
-		fmt.Println("here 2")
 		t.Fail()
 	}
 
-	m5 := New(
+	m5 := NewMutableMatrix(
 		[][]int{
 			{2, 3, 4},
 			{1, 0, 0},
 		},
 	)
 
-	m6 := New(
+	m6 := NewMutableMatrix(
 		[][]int{
 			{0},
 			{1},
@@ -76,7 +71,7 @@ func TestMutableMatrixMultiplication(t *testing.T) {
 	)
 
 	m5.MatrixMultiply(m6)
-	m5EqualsM6 := m5.Equals(New(
+	m5EqualsM6 := m5.Equals(NewMutableMatrix(
 		[][]int{
 			{3},
 			{0},
@@ -84,7 +79,6 @@ func TestMutableMatrixMultiplication(t *testing.T) {
 	))
 
 	if !m5EqualsM6 {
-		fmt.Println(m5)
 		t.Fail()
 	}
 }

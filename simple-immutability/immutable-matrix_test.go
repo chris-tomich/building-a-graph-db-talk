@@ -3,14 +3,14 @@ package simpleimmutability
 import "testing"
 
 func TestImmutableMatrixMultiplication(t *testing.T) {
-	m1 := New(
+	m1 := NewImmutableMatrix(
 		[][]int{
 			{2, 3, 4},
 			{1, 0, 0},
 		},
 	)
 
-	m2 := New(
+	m2 := NewImmutableMatrix(
 		[][]int{
 			{0, 1000},
 			{1, 100},
@@ -19,7 +19,7 @@ func TestImmutableMatrixMultiplication(t *testing.T) {
 	)
 
 	m3, _ := m1.MatrixMultiply(m2)
-	isCorrect := m3.Equals(New(
+	isCorrect := m3.Equals(NewImmutableMatrix(
 		[][]int{
 			{3, 2340},
 			{0, 1000},
@@ -30,13 +30,13 @@ func TestImmutableMatrixMultiplication(t *testing.T) {
 		t.Fail()
 	}
 
-	m4 := New(
+	m4 := NewImmutableMatrix(
 		[][]int{
 			{2, 3, 4},
 		},
 	)
 
-	m5 := New(
+	m5 := NewImmutableMatrix(
 		[][]int{
 			{0, 1000},
 			{1, 100},
@@ -45,7 +45,7 @@ func TestImmutableMatrixMultiplication(t *testing.T) {
 	)
 
 	m6, _ := m4.MatrixMultiply(m5)
-	isCorrect = m6.Equals(New(
+	isCorrect = m6.Equals(NewImmutableMatrix(
 		[][]int{
 			{3, 2340},
 		},
@@ -55,14 +55,14 @@ func TestImmutableMatrixMultiplication(t *testing.T) {
 		t.Fail()
 	}
 
-	m7 := New(
+	m7 := NewImmutableMatrix(
 		[][]int{
 			{2, 3, 4},
 			{1, 0, 0},
 		},
 	)
 
-	m8 := New(
+	m8 := NewImmutableMatrix(
 		[][]int{
 			{0},
 			{1},
@@ -71,7 +71,7 @@ func TestImmutableMatrixMultiplication(t *testing.T) {
 	)
 
 	m9, _ := m7.MatrixMultiply(m8)
-	isCorrect = m9.Equals(New(
+	isCorrect = m9.Equals(NewImmutableMatrix(
 		[][]int{
 			{3},
 			{0},

@@ -2,9 +2,7 @@ package simpleimmutability
 
 import (
 	"testing"
-	"github.com/chris-tomich/immutability-benchmarking/slice/mutable"
 	"math/rand"
-	"github.com/chris-tomich/immutability-benchmarking/slice/immutable"
 )
 
 type MatrixGenerator interface {
@@ -34,7 +32,7 @@ func (m MutableMatrixGenerator) GenerateMatrix() (Matrix, Matrix) {
 		}
 	}
 
-	return mutable.New(m1), mutable.New(m2)
+	return NewMutableMatrix(m1), NewMutableMatrix(m2)
 }
 
 type ImmutableMatrixGenerator struct {
@@ -59,7 +57,7 @@ func (m ImmutableMatrixGenerator) GenerateMatrix() (Matrix, Matrix) {
 		}
 	}
 
-	return immutable.New(m1), immutable.New(m2)
+	return NewImmutableMatrix(m1), NewImmutableMatrix(m2)
 }
 
 func MatrixAddRunner(b *testing.B, g MatrixGenerator, totalMatrices int) {
