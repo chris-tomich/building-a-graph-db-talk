@@ -1,4 +1,4 @@
-package simpleimmutability
+package main
 
 const MatrixWidth int = 810
 const MatrixHeight int = 810

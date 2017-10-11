@@ -1,4 +1,4 @@
-package simpleimmutability
+package main
 
 import "testing"
 
