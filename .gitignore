@@ -16,3 +16,5 @@
 using-rocksdb/using-rocksdb-sample-db/
 
 vendor/
+
+\.idea/
